@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Table } from "react-bootstrap";
-import Product_el from "./Product_el";
+import Table_Format from "./Table_Format";
 const Products = () => {
   const [products, setProduct] = useState([]);
 
@@ -34,7 +34,7 @@ const Products = () => {
   return (
     <>
       <Container>
-        <Table striped bordered hover>
+        <Table striped bordered hover variant="dark">
           <thead>
             <tr>
               <th>S.no</th>
@@ -44,7 +44,7 @@ const Products = () => {
           </thead>
           <tbody>
             {products.map((data, index) => {
-              return <Product_el index={index} data={data} />;
+              return <Table_Format index={index} data={data} />;
             })}
           </tbody>
         </Table>
